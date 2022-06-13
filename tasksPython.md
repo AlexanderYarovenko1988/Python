@@ -42,3 +42,15 @@
 > string = 'aabbaa'
 > reversed_string = ''.join(reversed(string))
 > print(string == reversed_string)
+
+5. На основании списка a = [‘red’, ‘yellow’, ‘blue’, ‘bread’]. Создать список, в котором будет только слово, лишнее в списке a.
+
+>```
+> a = ['red', 'yellow', 'blue', 'bread']
+> b = []
+> for i in a:
+>    if i != 'red' and i != 'yellow' and i != 'blue':
+>        removed_element = a.pop()
+>        b.append(removed_element)
+> print(a)
+> print(b)
