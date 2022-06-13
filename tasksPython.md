@@ -54,3 +54,42 @@
 >        b.append(removed_element)
 > print(a)
 > print(b)
+
+6. Есть 2 множества A = {3, 5, 11, 7, 4 -3}, B = {11, 5, 8, 1, 10, 7}. Вывести в консоль элементы A, которых нет в B.
+
+>```
+> A = {3, 5, 11, 7, 4, -3}
+> B = {11, 5, 8, 1, 10, 7}
+> print(A.difference(B))
+
+7. Есть строка a = “a14b6fh”, как узнать, что все символы уникальны, используя множества и списки?
+
+> ```
+> a = 'a14b6fh'
+> b = set(a)
+> if len(a) == len(b):
+>     print('В строке нет повторяющихся символов.')
+> else:
+>     print('Есть повторяющиеся символы.')
+
+8. Есть словарь: d = {‘a’:3, ‘b’:0, ‘c’:4, ‘d’:-3}. Найти самое большое число из значений словаря.
+
+> ```
+> d = {'a': 3, 'b': 0, 'c': 4, 'd': -3}
+> values = d.values()
+> big_number = d['a']
+> for i in values:
+>    if i > big_number:
+>         big_number = i
+> print(big_number)
+
+9. Есть словарь: d = {‘a’:3, ‘b’:hello, ‘c’:4, ‘d’:-3}. Найти самое большое число из значений словаря.
+
+> ```
+> values = d.values()
+> big_number = d['a']
+> for i in values:
+>     if type(i) == int:
+>         if i > big_number:
+>             big_number = i
+> print(big_number)
