@@ -38,7 +38,7 @@
 
 4. “aabbаа” - палиндром. Как это проверить?
 
-```
+> ```
 > string = 'aabbaa'
 > reversed_string = ''.join(reversed(string))
 > print(string == reversed_string)
