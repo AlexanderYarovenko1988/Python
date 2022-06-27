@@ -188,3 +188,17 @@
 > print(get_data(user, ["info", "special", "projects", 0, "name"]))  
 > print(get_data_rec(user, ["info", "special", "projects", 0, "name"]))  
 > ```
+12. Comprehension
+> ```
+> # chars = []
+> #
+> # for char in "abcde":
+> #     chars.append(char)
+> # print(chars)
+> 
+> chars = [char for char in "abcde"]
+> print(chars)
+> #_______________________________
+> data = ["John_25", "Sally_19", "Susan_35", "Jack_16"]
+> name_aga_dict = {v.split("_")[0]:v.split("_")[1] for v in data}
+> print(name_aga_dict)
