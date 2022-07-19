@@ -4,7 +4,7 @@ import fake_useragent
 import time
 import json
 
-
+print("Hello!")
 def get_links(text):
     ua = fake_useragent.UserAgent()
     data = requests.get(
@@ -44,18 +44,32 @@ def get_resume(link):
         return
     soup = BeautifulSoup(data.content, "lxml")
     try:
-        name = soup.find(attrs={"class": 'resume-block__title-text'}).text
+        name = soup.find(attrs={"class": "resume-block__title-text"}).text
     except:
         name = ""
+    # try:
+    #     salary = soup.find(attrs={"class": "resume-block__title-text_salary"}).text.replace("\u2009", "").replace("\xa0", "")
+    # except:
+    #     salary = ""
+    # try:
+    #     tags = [tag.text for tag in soup.find(attrs={"class": "bloko-tag-list"}).find_all(attrs={"class": "bloko-tag__section_text"})]
+    # except:
+    #     tags = []
+
     resume = {
-        "name": name
+        "name": name,
+        # "salary": salary,
+        # "tags": tags
     }
     return resume
 
 
 if __name__ == "__main__":
+    data = []
     for a in get_links("python"):
-        print(get_resume(a))
+        data.append(get_resume(a))
         time.sleep(1)
+        with open("data.json", "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
 
 
